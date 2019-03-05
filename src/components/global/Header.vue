@@ -13,7 +13,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">BS - Admin</a>
+      <a class="navbar-brand" href="/">BS - Admin</a>
 
       <div class="navbar">
         <ul class="navbar-nav mr-3">

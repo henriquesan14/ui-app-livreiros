@@ -1,23 +1,29 @@
 
 <template>
   <div class="container">
-    <Painel col="12" titulo="Opções">
+    <Painel col="12" titulo="Home">
     <div class="row">
         <Painel class="painel"  col="6" titulo="Cadastrar Livros" body="primary" header="primary" text="white">
-          <div class="box"> 
-            <i class="fas fa-book icon"></i>
+          <div class="box" > 
+            <a href="/cadastro">
+              <i class="fas fa-book icon"></i>
+            </a>
           </div>
         </Painel>
 
         <Painel class="painel" titulo="Buscar Livros" col="6" body="primary" header="primary" text="white">
           <div class="box"> 
-            <i class="fas fa-list icon"></i>
+            <a href="#">
+              <i class="fas fa-list icon"></i>
+            </a>
           </div>
         </Painel>
 
         <Painel class="painel" titulo="Cadastrar Descrição" col="6" body="primary" header="primary" text="white">
           <div class="box"> 
-            <i class="fas fa-list-alt icon"></i>
+            <a href="#">
+              <i class="fas fa-list-alt icon"></i>
+            </a>
           </div>
         </Painel>
     </div>

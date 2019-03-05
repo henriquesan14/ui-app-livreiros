@@ -3,8 +3,8 @@
     <ul>
       <li>
         <a href="#">
-          <i class="fas fa-chart-line"></i>
-          <span>Dashboard</span>
+          <i class="fas fa-home"></i>
+          <span>Home</span>
         </a>
       </li>
 
@@ -96,7 +96,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/cadastro">
               <i class="fas fa-plus-square"></i>Cadastrar
             </a>
           </li>
