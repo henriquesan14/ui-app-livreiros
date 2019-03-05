@@ -1,20 +1,26 @@
 <template>
   <div id="app">
-    <Navbar></Navbar>
-    <br>
-    <router-view></router-view>
+    <Header ></Header>
+    <div class="main">
+      <Navbar></Navbar>
+      <div class="content">
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
-    
-    
 </template>
 
 <script>
-import Navbar from './components/global/Navbar'
+import Header from "./components/global/Header";
+import Navbar from "./components/global/Navbar";
+
 export default {
   name: "app",
   components: {
+    Header,
     Navbar
   }
+  
 };
 </script>
 

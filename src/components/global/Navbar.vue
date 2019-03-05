@@ -1,77 +1,174 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Sebo Cultural</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-              Home
-              <span class="sr-only">(current)</span>
+  <div class="menu" v-bind:class="{ 'menu-open': menuAberto }">
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fas fa-chart-line"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+      <li >
+        <a href="#" @click.stop.prevent="toggle()">
+          <i class="fas fa-list"></i>
+          <span>Autor</span>
+        </a>
+        <ul v-bind:class="{'show-menu': opAutor, 'hide-menu': !opAutor}">
+          <li>
+            <a href="#">
+              <i class="fas fa-list"></i>Listar
             </a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >Cadastro</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Autor</a>
-              <a class="dropdown-item" href="#">Editora</a>
-              <a class="dropdown-item" href="#">Assunto</a>
-              <a class="dropdown-item" href="#">Descrição</a>
-              <a class="dropdown-item" href="#">Livro</a>
-              <a class="dropdown-item" href="#">Assunto</a>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >Busca</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Autor</a>
-              <a class="dropdown-item" href="#">Editora</a>
-              <a class="dropdown-item" href="#">Assunto</a>
-              <a class="dropdown-item" href="#">Descrição</a>
-              <a class="dropdown-item" href="#">Livro</a>
-              <a class="dropdown-item" href="#">Assunto</a>
-            </div>
+          <li>
+            <a href="#">
+              <i class="fas fa-plus-square"></i>Cadastrar
+            </a>
           </li>
         </ul>
-      </div>
-    </nav>
+      </li>
+
+      <li>
+        <a href="#" @click.stop.prevent="toggle2()">
+          <i class="fas fa-book-open"></i>
+          <span>Editora</span>
+        </a>
+        <ul v-bind:class="{'show-menu': opEditora, 'hide-menu': !opEditora}">
+          <li>
+            <a href="#">
+              <i class="fas fa-list-alt"></i>Listar
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-plus-square"></i>Cadastrar
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" @click.stop.prevent="toggle3()">
+          <i class="far fa-comments"></i>
+          <span>Assunto</span>
+        </a>
+        <ul v-bind:class="{'show-menu': opAssunto, 'hide-menu': !opAssunto}">
+          <li>
+            <a href="#">
+              <i class="fas fa-list-alt"></i>Listar
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-plus-square"></i>Novo
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"  @click.stop.prevent="toggle4()">
+          <i class="fas fa-file-alt"></i>
+          <span>Descrição</span>
+        </a>
+        <ul v-bind:class="{'show-menu': opDescricao, 'hide-menu': !opDescricao}">
+          <li>
+            <a href="#">
+              <i class="fas fa-list-alt"></i>Listar
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-plus-square"></i>Cadastrar
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"  @click.stop.prevent="toggle5()">
+          <i class="fas fa-book"></i>
+          <span>Livros</span>
+        </a>
+        <ul v-bind:class="{'show-menu': opLivros, 'hide-menu': !opLivros}">
+          <li>
+            <a href="#">
+              <i class="fas fa-list-alt"></i>Listar
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-plus-square"></i>Cadastrar
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
+import { EventBus } from "./event-bus.js";
 export default {
   name: "Navbar",
-  
+  data() {
+    return {
+      menuAberto: true,
+      opAutor: false,
+      opEditora: false,
+      opAssunto: false,
+      opDescricao: false,
+      opLivros: false,
+      windowWidth: 0
+    };
+  },
+  created() {
+    var largura = window.innerWidth;
+    if (largura < 900) {
+      this.menuAberto = false;
+    }
+    var that = this;
+    EventBus.$on("abreMenu", function() {
+      that.menuAberto = !that.menuAberto;
+    });
+  },
+  watch: {
+    windowWidth(newWidth, oldWidth){
+        this.handleResize(newWidth);
+    }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', () => {
+        this.windowWidth = window.innerWidth
+      });
+    })
+  },
+  methods: {
+    handleResize(largura) {
+      if (largura < 900) {
+        this.menuAberto = false;
+      } else {
+        this.menuAberto = true;
+      }
+    },
+    toggle(){
+      this.opAutor = !this.opAutor;
+    },
+    toggle2(){
+      this.opEditora = !this.opEditora;
+    },
+    toggle3(){
+      this.opAssunto = !this.opAssunto;
+    },
+    toggle4(){
+      this.opDescricao = !this.opDescricao;
+    },
+    toggle5(){
+      this.opLivros = !this.opLivros;
+    },
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style src="./Navbar.css"></style>

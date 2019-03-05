@@ -1,3 +1,11 @@
-h1{
-    color:red;
+.main{
+    display:flex;
+    background-color: #ecf0f5;
+    min-height: calc(100vh - 52px);
+    overflow: hidden;
+}
+
+.content{
+    width: 100%;
+    padding-top: 20px;
 }
