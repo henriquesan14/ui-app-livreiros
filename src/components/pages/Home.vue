@@ -5,9 +5,9 @@
     <div class="row">
         <Painel class="painel"  col="6" titulo="Cadastrar Livros" body="primary" header="primary" text="white">
           <div class="box" > 
-            <a href="/cadastro">
+            <router-link to="/cadastro">
               <i class="fas fa-book icon"></i>
-            </a>
+            </router-link>
           </div>
         </Painel>
 

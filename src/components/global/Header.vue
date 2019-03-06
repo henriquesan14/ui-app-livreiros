@@ -13,7 +13,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="/">BS - Admin</a>
+      <router-link class="navbar-brand" to="/">BS - Admin</router-link>
 
       <div class="navbar">
         <ul class="navbar-nav mr-3">

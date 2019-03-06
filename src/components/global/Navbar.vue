@@ -91,14 +91,14 @@
         </a>
         <ul v-bind:class="{'show-menu': opLivros, 'hide-menu': !opLivros}">
           <li>
-            <a href="#">
+            <router-link to="#">
               <i class="fas fa-list-alt"></i>Listar
-            </a>
+            </router-link>
           </li>
           <li>
-            <a href="/cadastro">
+            <router-link to="/cadastro">
               <i class="fas fa-plus-square"></i>Cadastrar
-            </a>
+            </router-link>
           </li>
         </ul>
       </li>

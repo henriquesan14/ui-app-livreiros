@@ -1,15 +1,39 @@
 
 <template>
-  <FormLivro></FormLivro>
+  <Painel titulo="Cadastro de Livros" col="12" text="white" header="primary">
+    <FormLivro></FormLivro>
+
+    <Modal titulo="Cadastro Autor" idModal="modalAutor">
+      <FormAutor></FormAutor>
+    </Modal>
+
+    <Modal titulo="Cadastro Editora" idModal="modalEditora">
+      <FormEditora></FormEditora>
+    </Modal>
+
+    <Modal titulo="Cadastro Assunto" idModal="modalAssunto">
+      <FormAssunto></FormAssunto>
+    </Modal>
+
+  </Painel>
 </template>
 
 <script>
-import FormLivro from '../shared/FormLivro'
+import Painel from "../shared/Painel";
+import Modal from "../shared/Modal";
+import FormLivro from "../shared/FormLivro";
+import FormAutor from "../shared/FormAutor";
+import FormEditora from "../shared/FormEditora";
+import FormAssunto from "../shared/FormAssunto";
 export default {
-  
   name: "CadastroLivro",
   components: {
-    FormLivro
+    Painel,
+    Modal,
+    FormLivro,
+    FormAutor,
+    FormEditora,
+    FormAssunto
   }
 };
 </script>

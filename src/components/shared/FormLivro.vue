@@ -1,5 +1,4 @@
 <template>
-  <Painel titulo="Cadastro de Livros" col="12" text="white" header="primary">
     <div>
       <form>
         <div class="row">
@@ -19,10 +18,10 @@
           <div class="form-group col-md-6">
             <label for="autor">Autor*</label>
             <input type="text" name="autor" id="autor" class="form-control">
-            <button class="btn btn-primary mt-1 mr-2" type="button">
+            <button class="btn btn-primary mt-1 mr-2" type="button" >
               <i class="fas fa-search-plus mr-1"></i>Consultar
             </button>
-            <button class="btn btn-primary mt-1" type="button">
+            <button class="btn btn-primary mt-1" type="button" data-toggle="modal" data-target="#modalAutor">
               <i class="fas fa-plus-circle mr-1"></i>Cadastrar
             </button>
           </div>
@@ -33,7 +32,7 @@
             <button class="btn btn-primary mt-1 mr-2" type="button">
               <i class="fas fa-search-plus mr-1"></i>Consultar
             </button>
-            <button class="btn btn-primary mt-1" type="button">
+            <button class="btn btn-primary mt-1" type="button" data-toggle="modal" data-target="#modalEditora">
               <i class="fas fa-plus-circle mr-1"></i>Cadastrar
             </button>
           </div>
@@ -44,7 +43,7 @@
             <button class="btn btn-primary mt-1 mr-2" type="button">
               <i class="fas fa-search-plus mr-1"></i>Consultar
             </button>
-            <button class="btn btn-primary mt-1" type="button">
+            <button class="btn btn-primary mt-1" type="button" data-toggle="modal" data-target="#modalAssunto">
               <i class="fas fa-plus-circle mr-1"></i>Cadastrar
             </button>
           </div>
@@ -124,22 +123,19 @@
           </div>
 
           <div class="form-group col-md-12">
-            <button type="button" class="btn btn-success">Cadastrar</button>
-            <button class="btn btn-light">Voltar</button>
+            <button type="button" class="btn btn-success mr-1"><i class="fas fa-save mr-1"></i>Cadastrar</button>
+            <button type="button" class="btn btn-danger mr-1"><i class="fas fa-broom mr-1"></i>Limpar</button>
+            <button type="button" class="btn btn-light" ><i class="fas fa-arrow-circle-left mr-1"></i>Voltar</button>
           </div>
         </div>
       </form>
     </div>
-  </Painel>
 </template>
 
 <script>
-import Painel from "./Painel";
+
 export default {
-  name: "FormLivro",
-  components: {
-    Painel
-  }
+  name: "FormLivro"
 };
 </script>
 
