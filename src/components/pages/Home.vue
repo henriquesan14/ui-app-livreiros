@@ -5,7 +5,7 @@
     <div class="row">
         <Painel class="painel"  col="6" titulo="Cadastrar Livros" body="primary" header="primary" text="white">
           <div class="box" > 
-            <router-link to="/cadastro">
+            <router-link to="/livros/cadastro">
               <i class="fas fa-book icon"></i>
             </router-link>
           </div>

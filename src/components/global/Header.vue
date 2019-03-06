@@ -35,7 +35,7 @@ import { EventBus } from "./event-bus.js";
 export default {
   name: "Header",
   methods: {
-    abreMenu(event){ 
+    abreMenu(){ 
       EventBus.$emit('abreMenu');
     }
   }

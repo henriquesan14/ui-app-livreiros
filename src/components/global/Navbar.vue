@@ -2,10 +2,10 @@
   <div class="menu" v-bind:class="{ 'menu-open': menuAberto }">
     <ul>
       <li>
-        <a href="#">
+        <router-link to="/">
           <i class="fas fa-home"></i>
           <span>Home</span>
-        </a>
+        </router-link>
       </li>
 
       <li >
@@ -15,9 +15,9 @@
         </a>
         <ul v-bind:class="{'show-menu': opAutor, 'hide-menu': !opAutor}">
           <li>
-            <a href="#">
+            <router-link to="/autores">
               <i class="fas fa-list"></i>Listar
-            </a>
+            </router-link>
           </li>
           <li>
             <a href="#">
@@ -34,9 +34,9 @@
         </a>
         <ul v-bind:class="{'show-menu': opEditora, 'hide-menu': !opEditora}">
           <li>
-            <a href="#">
+            <router-link to="/editoras">
               <i class="fas fa-list-alt"></i>Listar
-            </a>
+            </router-link>
           </li>
           <li>
             <a href="#">
@@ -53,9 +53,9 @@
         </a>
         <ul v-bind:class="{'show-menu': opAssunto, 'hide-menu': !opAssunto}">
           <li>
-            <a href="#">
+            <router-link to="/assuntos">
               <i class="fas fa-list-alt"></i>Listar
-            </a>
+            </router-link>
           </li>
           <li>
             <a href="#">
@@ -96,7 +96,7 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/cadastro">
+            <router-link to="/livros/cadastro">
               <i class="fas fa-plus-square"></i>Cadastrar
             </router-link>
           </li>
