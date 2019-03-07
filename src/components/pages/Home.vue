@@ -2,7 +2,7 @@
 <template>
   <div class="container">
     <Painel col="12" titulo="Home">
-    <div class="row">
+      <div class="row">
         <Painel class="painel"  col="6" titulo="Cadastrar Livros" body="primary" header="primary" text="white">
           <div class="box" > 
             <router-link to="/livros/cadastro">
@@ -26,7 +26,7 @@
             </a>
           </div>
         </Painel>
-    </div>
+      </div>
     </Painel>
   </div>
 </template>

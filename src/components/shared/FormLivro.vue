@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div >
       <form>
-        <div class="row">
+        <div class="row" >
           <div class="form-group col-md-6">
             <label for="isbn">ISBN*</label>
             <input type="text" name="isbn" id="isbn" class="form-control">
@@ -125,7 +125,7 @@
           <div class="form-group col-md-12">
             <button type="button" class="btn btn-success mr-1"><i class="fas fa-save mr-1"></i>Cadastrar</button>
             <button type="button" class="btn btn-danger mr-1"><i class="fas fa-broom mr-1"></i>Limpar</button>
-            <button type="button" class="btn btn-light" ><i class="fas fa-arrow-circle-left mr-1"></i>Voltar</button>
+            <button type="button" class="btn btn-light" data-dismiss="modal" ><i class="fas fa-arrow-circle-left mr-1"></i>Voltar</button>
           </div>
         </div>
       </form>

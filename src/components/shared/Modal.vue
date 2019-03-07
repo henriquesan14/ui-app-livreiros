@@ -1,6 +1,6 @@
 <template>
   <div class="modal fade" v-bind:id="idModal">
-      <div class="modal-dialog" >
+      <div class="modal-dialog" v-bind:class="{'modal-lg': large==true}">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">{{titulo}}</h5>
@@ -27,6 +27,10 @@ export default {
     idModal: {
       type: String,
       required: true
+    },
+    large: {
+      type: Boolean,
+      required: false
     }
   }
 };

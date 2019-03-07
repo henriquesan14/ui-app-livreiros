@@ -14,6 +14,7 @@
                 <th></th>
                 <th></th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -28,7 +29,7 @@
                 <td>R${{livro.valor}}</td>
                 <td><button class="btn btn-info btn-sm"><i class="fas fa-list-alt"></i></button></td>
                 <td><button class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></button></td>
-                <td><button class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></button></td>
+                <td><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalLivroDescrito"><i class="fas fa-plus-circle"></i></button></td>
                 <td><button class="btn btn-danger btn-sm"><i class="fas fa-eye"></i></button></td>
             </tr>
         </tbody>
@@ -56,7 +57,7 @@ export default {
         editora: 'Editora2',
         assunto: 'Assunto2',
         ano: '1992',
-        qtd: '1',
+        qtd: '2',
         valor: 2.2},
         {id: '3',
         titulo: 'Livro3',
