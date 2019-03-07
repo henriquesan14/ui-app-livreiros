@@ -74,10 +74,11 @@
           </tbody>
         </table>
       </div>
-    </form>
-    <button class="btn btn-success">
-      <i class="fas fa-save mr-1"></i>Salvar
+      <button class="btn btn-success" type="button">
+      <i class="fas fa-save mr-1"></i>Salvar Livro Descrito
     </button>
+    </form>
+    
   </div>
 </template>
 

@@ -132,7 +132,7 @@ export default {
     });
   },
   watch: {
-    windowWidth(newWidth, oldWidth){
+    windowWidth(newWidth){
         this.handleResize(newWidth);
     }
   },
