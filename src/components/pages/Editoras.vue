@@ -15,6 +15,7 @@
     </div>
 
     <TabelaEditoras></TabelaEditoras>
+    <Paginator :qtdPag="5"></Paginator>
 
     <Modal titulo="Cadastro Editora" idModal="modalEditora">
       <FormEditora></FormEditora>
@@ -28,13 +29,15 @@ import Painel from "../shared/Painel";
 import Modal from "../shared/Modal";
 import FormEditora from "../shared/FormEditora";
 import TabelaEditoras from "../shared/TabelaEditoras";
+import Paginator from "../shared/Paginator";
 export default {
   name: "Editoras",
   components: {
     Painel,
     Modal,
     FormEditora,
-    TabelaEditoras
+    TabelaEditoras,
+    Paginator
   }
 };
 </script>

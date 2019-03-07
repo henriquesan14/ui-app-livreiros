@@ -13,8 +13,8 @@
             <tr v-for="autor of autores" :key="autor.id">
                 <td>{{autor.id}}</td>
                 <td>{{autor.nome}}</td>
-                <td><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td>
                 <td><button class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></button></td>
+                <td><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td>
             </tr>
         </tbody>
     </table>
@@ -28,13 +28,13 @@ export default {
     return {
       autores: [
         {id: '1',
-        nome: 'Teste1'},
+        nome: 'Autor1'},
         {id: '2',
-        nome: 'Teste2'},
+        nome: 'Autor2'},
         {id: '3',
-        nome: 'Teste3'},
+        nome: 'Autor3'},
         {id: '4',
-        nome: 'Teste4'},
+        nome: 'Autor4'},
       ]
     }
   }

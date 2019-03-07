@@ -15,6 +15,7 @@
     </div>
 
     <TabelaAssuntos></TabelaAssuntos>
+    <Paginator :qtdPag="3" ></Paginator>
 
     <Modal titulo="Cadastro Assunto" idModal="modalAssunto">
       <FormAssunto></FormAssunto>
@@ -26,6 +27,7 @@
 <script>
 import Painel from "../shared/Painel";
 import Modal from "../shared/Modal";
+import Paginator from "../shared/Paginator";
 import FormAssunto from "../shared/FormAssunto";
 import TabelaAssuntos from "../shared/TabelaAssuntos";
 export default {
@@ -34,7 +36,8 @@ export default {
     Painel,
     Modal,
     FormAssunto,
-    TabelaAssuntos
+    TabelaAssuntos,
+    Paginator
   }
 };
 </script>

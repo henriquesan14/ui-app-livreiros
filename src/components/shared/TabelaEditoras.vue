@@ -13,8 +13,8 @@
             <tr v-for="editora of editoras" :key="editora.id">
                 <td>{{editora.id}}</td>
                 <td>{{editora.nome}}</td>
-                <td><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td>
                 <td><button class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></button></td>
+                <td><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td>
             </tr>
         </tbody>
     </table>
@@ -28,13 +28,13 @@ export default {
     return {
       editoras: [
         {id: '1',
-        nome: 'Teste1'},
+        nome: 'Editora1'},
         {id: '2',
-        nome: 'Teste2'},
+        nome: 'Editora2'},
         {id: '3',
-        nome: 'Teste3'},
+        nome: 'Editora3'},
         {id: '4',
-        nome: 'Teste4'},
+        nome: 'Editora4'},
       ]
     }
   }

@@ -91,7 +91,7 @@
         </a>
         <ul v-bind:class="{'show-menu': opLivros, 'hide-menu': !opLivros}">
           <li>
-            <router-link to="#">
+            <router-link to="/livros">
               <i class="fas fa-list-alt"></i>Listar
             </router-link>
           </li>

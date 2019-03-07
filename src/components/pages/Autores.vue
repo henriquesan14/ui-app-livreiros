@@ -16,6 +16,7 @@
     </div>
 
     <TabelaAutores></TabelaAutores>
+    <Paginator :qtdPag="7"></Paginator>
 
     <Modal titulo="Cadastro Autor" idModal="modalAutor">
       <FormAutor></FormAutor>
@@ -29,13 +30,15 @@ import Painel from "../shared/Painel";
 import Modal from "../shared/Modal";
 import FormAutor from "../shared/FormAutor";
 import TabelaAutores from "../shared/TabelaAutores";
+import Paginator from "../shared/Paginator";
 export default {
   name: "Autores",
   components: {
     Painel,
     Modal,
     FormAutor,
-    TabelaAutores
+    TabelaAutores,
+    Paginator
   }
 };
 </script>
