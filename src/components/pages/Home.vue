@@ -13,17 +13,17 @@
 
         <Painel class="painel" titulo="Buscar Livros" col="6" body="primary" header="primary" text="white">
           <div class="box"> 
-            <a href="#">
+            <router-link to="/livros">
               <i class="fas fa-list icon"></i>
-            </a>
+            </router-link>
           </div>
         </Painel>
 
-        <Painel class="painel" titulo="Cadastrar Descrição" col="6" body="primary" header="primary" text="white">
+        <Painel class="painel" titulo="Cadastrar Categoria de Descrição" col="6" body="primary" header="primary" text="white">
           <div class="box"> 
-            <a href="#">
+            <router-link to="/categorias">
               <i class="fas fa-list-alt icon"></i>
-            </a>
+            </router-link>
           </div>
         </Painel>
       </div>

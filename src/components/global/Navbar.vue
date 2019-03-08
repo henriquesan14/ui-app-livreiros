@@ -68,13 +68,13 @@
       <li>
         <a href="#"  @click.stop.prevent="toggle4()">
           <i class="fas fa-file-alt"></i>
-          <span>Descrição</span>
+          <span>Categoria</span>
         </a>
         <ul v-bind:class="{'show-menu': opDescricao, 'hide-menu': !opDescricao}">
           <li>
-            <a href="#">
+            <router-link to="/categorias">
               <i class="fas fa-list-alt"></i>Listar
-            </a>
+            </router-link>
           </li>
           <li>
             <a href="#">

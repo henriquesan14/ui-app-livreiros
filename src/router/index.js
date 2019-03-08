@@ -5,6 +5,7 @@ import CadastroLivro from '@/components/pages/CadastroLivro';
 import Autores from '@/components/pages/Autores';
 import Editoras from '@/components/pages/Editoras';
 import Assuntos from '@/components/pages/Assuntos';
+import Categorias from '@/components/pages/Categorias';
 import Livros from '@/components/pages/Livros';
 
 Vue.use(Router);
@@ -31,6 +32,11 @@ export default new Router({
             path: '/assuntos',
             name: 'Assuntos',
             component: Assuntos
+        },
+        {
+            path: '/categorias',
+            name: 'Categorias',
+            component: Categorias
         },
         {
             path: '/livros',
