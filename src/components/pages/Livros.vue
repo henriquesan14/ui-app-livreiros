@@ -98,7 +98,9 @@
           id="nav-profile"
           role="tabpanel"
           aria-labelledby="nav-profile-tab"
-        >...</div>
+        >
+        <DescricoesLivro></DescricoesLivro>
+        </div>
       </div>
       
     </Modal>
@@ -112,6 +114,8 @@ import FormLivro from "../shared/FormLivro";
 import TabelaLivros from "../shared/TabelaLivros";
 import Paginator from "../shared/Paginator";
 import FormLivroDescrito from "../shared/FormLivroDescrito";
+import DescricoesLivro from "../shared/DescricoesLivro";
+
 export default {
   name: "Livros",
   components: {
@@ -120,7 +124,8 @@ export default {
     TabelaLivros,
     Paginator,
     FormLivro,
-    FormLivroDescrito
+    FormLivroDescrito,
+    DescricoesLivro
   }
 };
 </script>

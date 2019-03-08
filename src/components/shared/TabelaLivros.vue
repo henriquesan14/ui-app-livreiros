@@ -28,7 +28,8 @@
                 <td>{{livro.qtd}}</td>
                 <td>R${{livro.valor}}</td>
                 <td><button class="btn btn-info btn-sm"><i class="fas fa-list-alt"></i></button></td>
-                <td><button class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></button></td>
+                <td><button class="btn btn-primary btn-sm" data-toggle="modal"
+        data-target="#modalLivro"><i class="fas fa-pencil-alt"></i></button></td>
                 <td><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalLivroDescrito"><i class="fas fa-plus-circle"></i></button></td>
                 <td><button class="btn btn-danger btn-sm"><i class="fas fa-eye"></i></button></td>
             </tr>
