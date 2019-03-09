@@ -45,7 +45,6 @@
           </li>
         </ul>
       </li>
-
       <li>
         <a href="#" @click.stop.prevent="toggle3()">
           <i class="far fa-comments"></i>
@@ -96,7 +95,7 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/livros/cadastro">
+            <router-link  to="/livros/cadastro">
               <i class="fas fa-plus-square"></i>Cadastrar
             </router-link>
           </li>

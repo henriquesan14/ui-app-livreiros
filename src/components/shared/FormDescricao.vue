@@ -20,7 +20,7 @@
         </div>
         <div class="form-group col-md-12">
           <button type="button" class="btn btn-primary mr-1">
-            <i class="fas fa-plus mr-1"></i>{{btn}}
+            <i class="fas mr-1" v-bind:class="{'fa-plus': btn=='Adicionar', 'fa-pencil-alt': btn=='Editar'}"></i>{{btn}}
           </button>
         </div>
       </div>
