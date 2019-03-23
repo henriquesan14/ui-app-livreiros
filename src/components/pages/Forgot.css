@@ -30,13 +30,13 @@
     margin: 10px auto;
 }
 
-.btn.btn-success{
+.btn-login{
     background-color:#26323e;
     color:#fff;
     border:none;
 }
 
-.btn.btn-success:hover{
+.btn-login:hover{
     background-color:#15212a;
 
 }

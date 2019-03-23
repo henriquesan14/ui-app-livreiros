@@ -55,7 +55,7 @@
           <input
             type="submit"
             value="Entrar"
-            class="btn btn-success form-control"
+            class="btn btn-success btn-login form-control"
           />
 
         </div>

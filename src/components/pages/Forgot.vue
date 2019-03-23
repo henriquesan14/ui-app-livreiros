@@ -39,7 +39,7 @@
           <input
             type="submit"
             value="Enviar"
-            class="btn btn-success form-control"
+            class="btn btn-success btn-login form-control"
           />
           <router-link class="btn form-control back" to="/">Voltar</router-link>
         </div>
