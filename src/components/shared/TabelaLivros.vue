@@ -4,7 +4,7 @@
         <thead class="thead-dark">
             <tr>
                 <th>Foto</th>
-                
+                <th>Cód.</th>
                 <th>Titulo</th>
                 <th>Autor</th>
                 <th>Editora</th>
@@ -21,6 +21,7 @@
         <tbody>
             <tr v-for="livro of livros" :key="livro.id">
                 <td><img id="icone-foto" src="../../assets/livro.png"></td>
+                <td>{{livro.id}}</td>
                 <td>{{livro.titulo}}</td>
                 <td>{{livro.autor}}</td>
                 <td>{{livro.editora}}</td>

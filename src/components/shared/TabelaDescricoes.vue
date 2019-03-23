@@ -3,7 +3,7 @@
     <table class="table table-hover">
         <thead class="thead-light">
             <tr>
-                <th>Código</th>
+                <th>Cód.</th>
                 <th>Nome</th>
                 <th>(-)R$</th>
                 <th>Status</th>
