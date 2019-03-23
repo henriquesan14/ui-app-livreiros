@@ -1,9 +1,10 @@
 <template>
   <div class="table-responsive">
-    <table class="table table-hover">
+    <table class="table table-hover table-sm">
         <thead class="thead-dark">
             <tr>
-                <th>Código</th>
+                <th>Foto</th>
+                
                 <th>Titulo</th>
                 <th>Autor</th>
                 <th>Editora</th>
@@ -19,7 +20,7 @@
         </thead>
         <tbody>
             <tr v-for="livro of livros" :key="livro.id">
-                <td>{{livro.id}}</td>
+                <td><img id="icone-foto" src="../../assets/livro.png"></td>
                 <td>{{livro.titulo}}</td>
                 <td>{{livro.autor}}</td>
                 <td>{{livro.editora}}</td>
@@ -92,4 +93,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#icone-foto{
+  display: block;
+  width:40px;
+  height: 60px;
+}
+
 </style>

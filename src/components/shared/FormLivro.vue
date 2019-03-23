@@ -11,6 +11,11 @@
           </div>
 
           <div class="form-group col-md-6">
+            <label for="foto">Foto</label>
+            <input type="file" class="form-control-file" id="foto" accept="image/*">
+          </div>
+
+          <div class="form-group col-md-12">
             <label for="titulo">Titulo*</label>
             <input type="text" name="titulo" id="titulo" class="form-control">
           </div>

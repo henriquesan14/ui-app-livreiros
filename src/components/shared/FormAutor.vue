@@ -6,6 +6,7 @@
             <label for="nome">Nome*</label>
             <input type="text" name="nome" id="nome" class="form-control">
           </div>
+
           <div class="form-group col-md-12">
             <button type="button" class="btn btn-success mr-1"><i class="fas fa-save mr-1"></i>Cadastrar</button>
             <button type="button" class="btn btn-danger mr-1"><i class="fas fa-broom mr-1"></i>Limpar</button>

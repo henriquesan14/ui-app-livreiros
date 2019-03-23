@@ -12,14 +12,11 @@
       <button class="btn btn-primary mr-2 mr-top" type="button">
         <i class="fas fa-search-plus mr-1"></i>Consultar
       </button>
-      <button
-        class="btn btn-primary mr-top"
-        type="button"
-        data-toggle="modal"
-        data-target="#modalLivro"
+      <router-link
+        class="btn btn-primary mr-top" to="/livros/cadastro"
       >
         <i class="fas fa-plus-circle mr-1"></i>Cadastrar
-      </button>
+      </router-link>
     </div>
 
     <div class="row container mb-4">

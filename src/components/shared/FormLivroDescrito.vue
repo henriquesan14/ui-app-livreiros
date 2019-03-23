@@ -19,7 +19,7 @@
           <input type="number" name="qtd" id="qtd" class="form-control">
         </div>
         <div class="form-group col-md-12">
-          <label for="obs">Obs*</label>
+          <label for="obs">Obs</label>
           <textarea type="text" name="obs" id="obs" class="form-control"></textarea>
         </div>
       </div>

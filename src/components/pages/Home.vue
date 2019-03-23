@@ -26,8 +26,11 @@
             </router-link>
           </div>
         </Painel>
+        
       </div>
     </Painel>
+    
+
   </div>
 </template>
 
