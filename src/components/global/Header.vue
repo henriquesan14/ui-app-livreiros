@@ -1,6 +1,6 @@
 <template>
   <div class="pos-f-t">
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark"> 
       <button
         @click.stop.prevent="abreMenu()"
         class="navbar-toggler"
@@ -12,9 +12,8 @@
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <router-link class="navbar-brand" to="/">BS - Admin</router-link>
-
+      </button>    
+      <router-link class="navbar-brand" to="/dashboard"><img class="logo" src="../../assets/logo.jpg"></router-link>
       <div class="navbar">
         <ul class="navbar-nav mr-3">
           <li  class="nav-item">

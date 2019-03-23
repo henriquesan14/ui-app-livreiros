@@ -10,3 +10,11 @@
   .nav-item{
     cursor:pointer;
   }
+
+  .logo{
+    display: block;
+    float: left;
+    width: 65px;
+    height: 65px;
+    border-radius: 5px;
+  }

@@ -16,9 +16,6 @@
     padding: 0px;
  }
  
-  .menu ul li.active {
-    background-color: #080808;
- }
  
   .menu ul li a {
     display: block;
@@ -68,4 +65,9 @@
    overflow: hidden;
    height: 0px;
    transition: 1s;
+ }
+
+ .fas.fa-caret-down{
+   font-size: 20px;
+   margin-left: 100px;
  }

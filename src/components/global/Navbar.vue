@@ -2,91 +2,44 @@
   <div class="menu" v-bind:class="{ 'menu-open': menuAberto }">
     <ul>
       <li>
-        <router-link to="/">
+        <router-link to="/dashboard">
           <i class="fas fa-home"></i>
           <span>Home</span>
         </router-link>
       </li>
 
-      <li >
-        <a href="#" @click.stop.prevent="toggle()">
+      <li>
+        <router-link to="/autores">
           <i class="fas fa-list"></i>
           <span>Autor</span>
-        </a>
-        <ul v-bind:class="{'show-menu': opAutor, 'hide-menu': !opAutor}">
-          <li>
-            <router-link to="/autores">
-              <i class="fas fa-list"></i>Listar
-            </router-link>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-plus-square"></i>Cadastrar
-            </a>
-          </li>
-        </ul>
+        </router-link>
       </li>
 
       <li>
-        <a href="#" @click.stop.prevent="toggle2()">
+        <router-link to="/editoras">
           <i class="fas fa-book-open"></i>
           <span>Editora</span>
-        </a>
-        <ul v-bind:class="{'show-menu': opEditora, 'hide-menu': !opEditora}">
-          <li>
-            <router-link to="/editoras">
-              <i class="fas fa-list-alt"></i>Listar
-            </router-link>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-plus-square"></i>Cadastrar
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="#" @click.stop.prevent="toggle3()">
-          <i class="far fa-comments"></i>
-          <span>Assunto</span>
-        </a>
-        <ul v-bind:class="{'show-menu': opAssunto, 'hide-menu': !opAssunto}">
-          <li>
-            <router-link to="/assuntos">
-              <i class="fas fa-list-alt"></i>Listar
-            </router-link>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-plus-square"></i>Novo
-            </a>
-          </li>
-        </ul>
+        </router-link>
       </li>
 
       <li>
-        <a href="#"  @click.stop.prevent="toggle4()">
+        <router-link to="/assuntos">
+          <i class="fas fa-comments"></i>
+          <span>Assunto</span>
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="/categorias">
           <i class="fas fa-file-alt"></i>
           <span>Categoria</span>
-        </a>
-        <ul v-bind:class="{'show-menu': opDescricao, 'hide-menu': !opDescricao}">
-          <li>
-            <router-link to="/categorias">
-              <i class="fas fa-list-alt"></i>Listar
-            </router-link>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-plus-square"></i>Cadastrar
-            </a>
-          </li>
-        </ul>
+        </router-link>
       </li>
 
       <li>
         <a href="#"  @click.stop.prevent="toggle5()">
           <i class="fas fa-book"></i>
-          <span>Livros</span>
+          <span>Livros</span><i class="fas fa-caret-down"></i>
         </a>
         <ul v-bind:class="{'show-menu': opLivros, 'hide-menu': !opLivros}">
           <li>
