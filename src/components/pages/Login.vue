@@ -6,7 +6,7 @@
       id="form-box"
     >
       <form
-        method="post"
+        method="post" @submit.prevent="login"
       >
         <img
           src="../../assets/logo.jpg"
@@ -23,11 +23,12 @@
             required
             email
             type="text"
-            name="email"
+            name="login"
             class="form-control"
-            placeholder="Email"
-            aria-label="email"
+            placeholder="Login"
+            aria-label="login"
             aria-describedby="basic-addon1"
+            v-model="user.loginUsuario"
           >
         </div>
 
@@ -48,6 +49,7 @@
             placeholder="Password"
             aria-label="Username"
             aria-describedby="basic-addon1"
+            v-model="user.senhaUsuario"
           >
         </div>
 
@@ -69,9 +71,23 @@
 </template>
 
 <script>
+import Auth from '../../services/auth.js'
 export default {
-  name: "Login"
-
+  name: "Login",
+  data(){
+    return {
+      user: {
+        loginUsuario: '',
+        senhaUsuario: ''
+      }
+    }
+  },
+  methods:{
+    login(){
+      Auth.login(this.user).then(res => localStorage.setItem('token', res.data.token)).catch(err => console.log(err));
+    }
+  }
+  
 };
 </script>
 
