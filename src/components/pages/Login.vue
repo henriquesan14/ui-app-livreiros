@@ -84,7 +84,7 @@ export default {
   },
   methods:{
     login(){
-      Auth.login(this.user).then(res => localStorage.setItem('token', res.data.token)).catch(err => console.log(err));
+      Auth.login(this.user).then(res => localStorage.setItem('token',JSON.stringify(res.data.auth))).catch(err => console.log(err));
     }
   }
   
