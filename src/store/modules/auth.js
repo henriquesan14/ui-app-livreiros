@@ -1,9 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import axios from 'axios'
-import { apiConfig } from '../config/config'
-
-Vue.use(Vuex)
+import axios from 'axios';
+import {apiConfig} from '../../config/config'
 
 
 axios.interceptors.request.use(function(config) {
@@ -52,11 +48,9 @@ getters =  {
   token: state => state.token
 }
 
-const store = new Vuex.Store({
+export default {
   state,
   mutations,
   actions,
   getters
-})
-
-export default store
+}
