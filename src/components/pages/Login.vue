@@ -12,6 +12,9 @@
           src="../../assets/logo.jpg"
           id="logo" class="mb-3"
         />
+        <div class="alert alert-danger" v-if="error" role="alert">
+          {{error}}
+        </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span
@@ -54,13 +57,14 @@
         </div>
 
         <div class="form-group">
-          <input
+          <button
             type="submit"
-            value="Entrar"
             class="btn btn-success btn-login form-control"
-          />
-
+          >Entrar
+          <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          </button>
         </div>
+      
 
         <div class="forgot mb-2">
           <router-link to="/forgot">Esqueceu sua senha?</router-link>
@@ -78,13 +82,28 @@ export default {
       user: {
         loginUsuario: '',
         senhaUsuario: ''
-      }
+      },
+      loading: false,
+      error: ''
     }
   },
   methods:{
     async login(){
-      await this.$store.dispatch('LOGIN', this.user);
-      this.$router.push('/dashboard');
+      this.loading = true;
+      this.$store.dispatch('LOGIN', this.user)
+      .then(
+        () => {this.$router.push('/dashboard')}    
+      )
+      .catch(
+        () => {
+          this.error = 'Usuario/Senha inválidos!'
+        }
+      )
+      .finally( () => {
+        this.loading = false;
+      }
+      );
+      
     }
   }
   

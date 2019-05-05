@@ -17,9 +17,9 @@
       <div class="navbar">
         <ul class="navbar-nav mr-3">
           <li  class="nav-item">
-            <a class="nav-link" href="#" >
+            <a class="nav-link" href="#" @click="logout()">
               <i class="fas fa-sign-out-alt">
-                <span class="ml-1" @click="logout()">Sair</span>
+                <span class="ml-1" >Sair</span>
               </i>
             </a>
           </li>
@@ -39,7 +39,6 @@ export default {
     },
     async logout(){
       await this.$store.dispatch('LOGOUT');
-      alert('logout')
       this.$router.push('/');
     }
   }
