@@ -19,7 +19,7 @@
           <li  class="nav-item">
             <a class="nav-link" href="#" >
               <i class="fas fa-sign-out-alt">
-                <span class="ml-1">Sair</span>
+                <span class="ml-1" @click="logout()">Sair</span>
               </i>
             </a>
           </li>
@@ -36,6 +36,9 @@ export default {
   methods: {
     abreMenu(){ 
       EventBus.$emit('abreMenu');
+    },
+    logout(){
+      this.$store.dispatch('LOGOUT');
     }
   }
 };

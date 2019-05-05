@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import Auth from '../../services/auth.js'
+// import Auth from '../../services/auth.js'
 export default {
   name: "Login",
   data(){
@@ -84,7 +84,7 @@ export default {
   },
   methods:{
     login(){
-      Auth.login(this.user).then(res => localStorage.setItem('token',JSON.stringify(res.data.auth))).catch(err => console.log(err));
+      this.$store.dispatch('LOGIN', this.user);
     }
   }
   
