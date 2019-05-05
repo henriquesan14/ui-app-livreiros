@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import Painel from "../shared/Painel";
-import Modal from "../shared/Modal";
-import FormEditora from "../shared/FormEditora";
-import TabelaEditoras from "../shared/TabelaEditoras";
-import Paginator from "../shared/Paginator";
+import Painel from "../../shared/Painel/Painel";
+import Modal from "../../shared/Modal/Modal";
+import FormEditora from "../../shared/FormEditora/FormEditora";
+import TabelaEditoras from "../../shared/TabelaEditoras/TabelaEditoras";
+import Paginator from "../../shared/Paginator/Paginator";
 export default {
   name: "Editoras",
   components: {

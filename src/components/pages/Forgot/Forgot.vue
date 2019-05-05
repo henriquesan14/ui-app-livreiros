@@ -9,7 +9,7 @@
         method="post"
       >
         <img
-          src="../../assets/logo.jpg"
+          src="../../../assets/logo.jpg"
           id="logo" class="mb-3"
         />
         <div>

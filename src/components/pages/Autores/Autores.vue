@@ -26,11 +26,11 @@
 </template>
 
 <script>
-import Painel from "../shared/Painel";
-import Modal from "../shared/Modal";
-import FormAutor from "../shared/FormAutor";
-import TabelaAutores from "../shared/TabelaAutores";
-import Paginator from "../shared/Paginator";
+import Painel from "../../shared/Painel/Painel";
+import Modal from "../../shared/Modal/Modal";
+import FormAutor from "../../shared/FormAutor/FormAutor";
+import TabelaAutores from "../../shared/TabelaAutores/TabelaAutores";
+import Paginator from "../../shared/Paginator/Paginator";
 export default {
   name: "Autores",
   components: {

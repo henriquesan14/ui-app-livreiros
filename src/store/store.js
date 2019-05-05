@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import { apiConfig } from '../config/config'
 
 Vue.use(Vuex)
 
@@ -35,12 +36,12 @@ const mutations = {
 
 const actions = {
   async LOGIN ({commit}, user) {
-    const url = `http://localhost:3000/login`;
+    const url = `${apiConfig.baseUrl}/login`;
     const { data } = await axios.post(url, user);
     commit('LOGIN', JSON.stringify(data.auth));
   },
   async LOGOUT ({commit}) {
-    const url = `http://localhost:3000/logout`;
+    const url = `${apiConfig.baseUrl}/logout`;
     await axios.post(url);
     commit('LOGOUT');
   }

@@ -9,7 +9,7 @@
         method="post" @submit.prevent="login"
       >
         <img
-          src="../../assets/logo.jpg"
+          src="../../../assets/logo.jpg"
           id="logo" class="mb-3"
         />
         <div class="alert alert-danger" v-if="error" role="alert">

@@ -13,7 +13,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>    
-      <router-link class="navbar-brand" to="/dashboard"><img class="logo" src="../../assets/logo.jpg"></router-link>
+      <router-link class="navbar-brand" to="/dashboard"><img class="logo" src="../../../assets/logo.jpg"></router-link>
       <div class="navbar">
         <ul class="navbar-nav mr-3">
           <li  class="nav-item">
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { EventBus } from "./event-bus.js";
+import { EventBus } from "../../../event-bus.js";
 export default {
   name: "Header",
   methods: {

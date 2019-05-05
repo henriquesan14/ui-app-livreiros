@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             <tr v-for="livro of livros" :key="livro.id">
-                <td><img id="icone-foto" src="../../assets/livro.png"></td>
+                <td><img id="icone-foto" src="../../../assets/livro.png"></td>
                 <td>{{livro.id}}</td>
                 <td>{{livro.titulo}}</td>
                 <td>{{livro.autor}}</td>

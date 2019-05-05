@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import Painel from "../shared/Painel";
-import Modal from "../shared/Modal";
-import Paginator from "../shared/Paginator";
-import FormAssunto from "../shared/FormAssunto";
-import TabelaAssuntos from "../shared/TabelaAssuntos";
+import Painel from "../../shared/Painel/Painel";
+import Modal from "../../shared/Modal/Modal";
+import Paginator from "../../shared/Paginator/Paginator";
+import FormAssunto from "../../shared/FormAssunto/FormAssunto";
+import TabelaAssuntos from "../../shared/TabelaAssuntos/TabelaAssuntos";
 export default {
   name: "Assuntos",
   components: {

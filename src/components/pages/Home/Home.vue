@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import Painel from '../shared/Painel'
+import Painel from '../../shared/Painel/Painel'
 export default {
   
   name: "Home",

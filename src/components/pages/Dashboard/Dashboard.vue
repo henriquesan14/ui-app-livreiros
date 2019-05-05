@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Header from "../global/Header";
-import Navbar from "../global/Navbar";
+import Header from "../../global/Header/Header";
+import Navbar from "../../global/Navbar/Navbar";
 export default {
   name: "Dashboard",
   components: {

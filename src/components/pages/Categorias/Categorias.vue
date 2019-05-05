@@ -35,13 +35,13 @@
 </template>
 
 <script>
-import Painel from "../shared/Painel";
-import Modal from "../shared/Modal";
-import FormCategoria from "../shared/FormCategoria";
-import TabelaCategorias from "../shared/TabelaCategorias";
-import Paginator from "../shared/Paginator";
-import FormDescricao from "../shared/FormDescricao";
-import TabelaDescricoes from "../shared/TabelaDescricoes";
+import Painel from "../../shared/Painel/Painel";
+import Modal from "../../shared/Modal/Modal";
+import FormCategoria from "../../shared/FormCategoria/FormCategoria";
+import TabelaCategorias from "../../shared/TabelaCategorias/TabelaCategorias";
+import Paginator from "../../shared/Paginator/Paginator";
+import FormDescricao from "../../shared/FormDescricao/FormDescricao";
+import TabelaDescricoes from "../../shared/TabelaDescricoes/TabelaDescricoes";
 export default {
   name: "Editoras",
   components: {

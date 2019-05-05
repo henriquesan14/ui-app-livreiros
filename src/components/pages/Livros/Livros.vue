@@ -105,13 +105,13 @@
 </template>
 
 <script>
-import Painel from "../shared/Painel";
-import Modal from "../shared/Modal";
-import FormLivro from "../shared/FormLivro";
-import TabelaLivros from "../shared/TabelaLivros";
-import Paginator from "../shared/Paginator";
-import FormLivroDescrito from "../shared/FormLivroDescrito";
-import DescricoesLivro from "../shared/DescricoesLivro";
+import Painel from "../../shared/Painel/Painel";
+import Modal from "../../shared/Modal/Modal";
+import FormLivro from "../../shared/FormLivro/FormLivro";
+import TabelaLivros from "../../shared/TabelaLivros/TabelaLivros";
+import Paginator from "../../shared/Paginator/Paginator";
+import FormLivroDescrito from "../../shared/FormLivroDescrito/FormLivroDescrito";
+import DescricoesLivro from "../../shared/DescricoesLivro/DescricoesLivro";
 
 export default {
   name: "Livros",

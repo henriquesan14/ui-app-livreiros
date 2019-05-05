@@ -1,15 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/components/pages/Home';
-import Dashboard from '@/components/pages/Dashboard';
-import CadastroLivro from '@/components/pages/CadastroLivro';
-import Autores from '@/components/pages/Autores';
-import Editoras from '@/components/pages/Editoras';
-import Assuntos from '@/components/pages/Assuntos';
-import Categorias from '@/components/pages/Categorias';
-import Livros from '@/components/pages/Livros';
-import Login from '@/components/pages/Login';
-import Forgot from '@/components/pages/Forgot';
+import Home from '@/components/pages/Home/Home';
+import Dashboard from '@/components/pages/Dashboard/Dashboard';
+import CadastroLivro from '@/components/pages/CadastroLivro/CadastroLivro';
+import Autores from '@/components/pages/Autores/Autores';
+import Editoras from '@/components/pages/Editoras/Editoras';
+import Assuntos from '@/components/pages/Assuntos/Assuntos';
+import Categorias from '@/components/pages/Categorias/Categorias';
+import Livros from '@/components/pages/Livros/Livros';
+import Login from '@/components/pages/Login/Login';
+import Forgot from '@/components/pages/Forgot/Forgot';
 
 Vue.use(Router);
 

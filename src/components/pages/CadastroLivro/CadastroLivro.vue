@@ -19,12 +19,12 @@
 </template>
 
 <script>
-import Painel from "../shared/Painel";
-import Modal from "../shared/Modal";
-import FormLivro from "../shared/FormLivro";
-import FormAutor from "../shared/FormAutor";
-import FormEditora from "../shared/FormEditora";
-import FormAssunto from "../shared/FormAssunto";
+import Painel from "../../shared/Painel/Painel";
+import Modal from "../../shared/Modal/Modal";
+import FormLivro from "../../shared/FormLivro/FormLivro";
+import FormAutor from "../../shared/FormAutor/FormAutor";
+import FormEditora from "../../shared/FormEditora/FormEditora";
+import FormAssunto from "../../shared/FormAssunto/FormAssunto";
 export default {
   name: "CadastroLivro",
   components: {
