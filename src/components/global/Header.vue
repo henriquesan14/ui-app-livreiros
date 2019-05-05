@@ -37,8 +37,10 @@ export default {
     abreMenu(){ 
       EventBus.$emit('abreMenu');
     },
-    logout(){
-      this.$store.dispatch('LOGOUT');
+    async logout(){
+      await this.$store.dispatch('LOGOUT');
+      alert('logout')
+      this.$router.push('/');
     }
   }
 };

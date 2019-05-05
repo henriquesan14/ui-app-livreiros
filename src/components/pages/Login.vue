@@ -71,7 +71,6 @@
 </template>
 
 <script>
-// import Auth from '../../services/auth.js'
 export default {
   name: "Login",
   data(){
@@ -83,8 +82,9 @@ export default {
     }
   },
   methods:{
-    login(){
-      this.$store.dispatch('LOGIN', this.user);
+    async login(){
+      await this.$store.dispatch('LOGIN', this.user);
+      this.$router.push('/dashboard');
     }
   }
   

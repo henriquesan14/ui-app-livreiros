@@ -20,33 +20,33 @@ export default new Router({
             path: '',
             name: 'Login',
             component: Login,
-            beforeEnter: function(to, from, next) {
+            beforeEnter: function(to, from, next){
                 let token = localStorage.getItem('token')
                 if(token){
                     next('/dashboard')
                     return;
                 }
                 next()
-            },
+            }
         },
         {
             path: '/forgot',
             name: 'Forgot',
             component: Forgot,
-            beforeEnter: function(to, from, next) {
+            beforeEnter: function(to, from, next){
                 let token = localStorage.getItem('token')
                 if(token){
                     next('/dashboard')
                     return;
                 }
                 next()
-            },
+            }
         },
         {
             path: '/dashboard',
             name: 'Dashboard',
             component: Dashboard,
-            beforeEnter: function(to, from, next) {
+            beforeEnter: function(to, from, next){
                 let token = localStorage.getItem('token')
                 if(!token){
                     next('/')
@@ -95,7 +95,15 @@ export default new Router({
         {
             path: '/**',
             name: 'Login',
-            component: Login
+            component: Login,
+            beforeEnter: function(to, from, next){
+                let token = localStorage.getItem('token')
+                if(token){
+                    next('/dashboard')
+                    return;
+                }
+                next()
+            }
         },
         
     ],

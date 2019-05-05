@@ -14,16 +14,11 @@ const mutations = {
     state.logged = true,
     state.token = response,
     localStorage.setItem('token', response);
-    localStorage.setItem('logged', true);
-    console.log('state updated');
-    console.log('state.logged flag is: '+state.logged);
-    console.log('state.token: '+state.token);
   },
   LOGOUT: (state) => {
     state.logged = false;
     state.token = '';
-    localStorage.setItem('token', '');
-    localStorage.setItem('logged', false);
+    localStorage.removeItem('token')
 }
 }
 
@@ -31,30 +26,19 @@ const actions = {
   async LOGIN ({commit}, user) {
     const url = `http://localhost:3000/login`;
     const { data } = await axios.post(url, user);
-    commit('LOGIN', JSON.stringify(data.auth.token));
+    commit('LOGIN', JSON.stringify(data.auth));
   },
-  LOGOUT ({commit}) {
+  async LOGOUT ({commit}) {
+    const url = `http://localhost:3000/logout`;
+    await axios.post(url);
     commit('LOGOUT');
   }
 },
 
 getters =  {
-  logged: state => state.session.logged,
-  token: state => state.session.token
+  logged: state => state.logged,
+  token: state => state.token
 }
-
-// const getters = {
-//   characters: state => {
-//     return state.data.map(data => {
-//       return {
-//         name: data.name,
-//         url: data.urls[1] ? data.urls[1].url : data.urls[0].url,
-//         image: `${data.thumbnail.path}.${data.thumbnail.extension}`,
-//         description: data.description === '' ? 'No description listed for this character.' : data.description
-//       }
-//     })
-//   }
-//}
 
 const store = new Vuex.Store({
   state,
