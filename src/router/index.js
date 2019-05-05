@@ -22,8 +22,7 @@ export default new Router({
             name: 'Login',
             component: Login,
             beforeEnter: function(to, from, next){
-                let token = localStorage.getItem('token')
-                if(token){
+                if(isLogged()){
                     next('/dashboard')
                     return;
                 }
@@ -35,8 +34,7 @@ export default new Router({
             name: 'Forgot',
             component: Forgot,
             beforeEnter: function(to, from, next){
-                let token = localStorage.getItem('token')
-                if(token){
+                if(isLogged()){
                     next('/dashboard')
                     return;
                 }
@@ -48,12 +46,11 @@ export default new Router({
             name: 'Dashboard',
             component: Dashboard,
             beforeEnter: function(to, from, next){
-                let token = localStorage.getItem('token')
-                if(!token){
-                    next('/')
+                if(isLogged()){
+                    next()
                     return;
                 }
-                next()
+                next('/')
             },
             children: [
                 {
@@ -103,8 +100,7 @@ export default new Router({
             name: 'Login',
             component: Login,
             beforeEnter: function(to, from, next){
-                let token = localStorage.getItem('token')
-                if(token){
+                if(isLogged()){
                     next('/dashboard')
                     return;
                 }
@@ -114,3 +110,11 @@ export default new Router({
         
     ],
 });
+
+const isLogged = () => {
+    let token = localStorage.getItem('token')
+     if(token){
+        return true;
+     }
+     return false;
+}

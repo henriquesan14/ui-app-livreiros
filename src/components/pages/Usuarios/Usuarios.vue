@@ -15,8 +15,8 @@
       </button>
     </div>
 
-    <TabelaUsuarios :users="users"></TabelaUsuarios>
-    <Paginator :qtdPag="5"></Paginator>
+    <TabelaUsuarios :users="users.rows"></TabelaUsuarios>
+    <Paginator :qtdPag="users.totalPage+1"></Paginator>
 
     <Modal titulo="Cadastro Usuário" idModal="modalEditora">
       <FormEditora></FormEditora>
@@ -42,7 +42,7 @@ export default {
     Paginator
   },
   mounted(){
-      this.$store.dispatch('GETALL');
+      this.$store.dispatch('GETALL', 0);
   },
   computed: mapGetters([
       'users'
