@@ -16,7 +16,7 @@
     </div>
 
     <TabelaUsuarios :users="users.rows"></TabelaUsuarios>
-    <Paginator :qtdPag="users.totalPage+1"></Paginator>
+    <Paginator :qtdPag="users.totalPage+1" @go-page="goPage" :pagAtiva="pagAtiva" @next="next" @previous="previous"></Paginator>
 
     <Modal titulo="Cadastro Usuário" idModal="modalEditora">
       <FormEditora></FormEditora>
@@ -41,12 +41,31 @@ export default {
     TabelaUsuarios,
     Paginator
   },
+  data() {
+    return {
+      pagAtiva: 0
+    }
+  },
   mounted(){
       this.$store.dispatch('GETALL', 0);
   },
   computed: mapGetters([
       'users'
-  ])
+  ]),
+  methods: {
+    goPage(index){
+      this.$store.dispatch('GETALL', index);
+      this.pagAtiva = index;
+    },
+    next(){
+      this.$store.dispatch('GETALL', this.pagAtiva+1);
+      this.pagAtiva = this.pagAtiva+1;
+    },
+    previous(){
+      this.$store.dispatch('GETALL', this.pagAtiva-1);
+      this.pagAtiva = this.pagAtiva-1;
+    }
+  }
 };
 </script>
 
