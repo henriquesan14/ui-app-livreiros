@@ -11,33 +11,40 @@
       <li>
         <router-link to="/autores">
           <i class="fas fa-list"></i>
-          <span>Autor</span>
+          <span>Autores</span>
         </router-link>
       </li>
 
       <li>
         <router-link to="/editoras">
           <i class="fas fa-book-open"></i>
-          <span>Editora</span>
+          <span>Editorsa</span>
         </router-link>
       </li>
 
       <li>
         <router-link to="/assuntos">
           <i class="fas fa-comments"></i>
-          <span>Assunto</span>
+          <span>Assuntos</span>
         </router-link>
       </li>
 
       <li>
         <router-link to="/categorias">
           <i class="fas fa-file-alt"></i>
-          <span>Categoria</span>
+          <span>Categorias</span>
         </router-link>
       </li>
 
       <li>
-        <a href="#"  @click.stop.prevent="toggle5()">
+        <router-link to="/usuarios">
+          <i class="fas fa-user"></i>
+          <span>Usuários</span>
+        </router-link>
+      </li>
+
+      <li>
+        <a href="#"  @click.stop.prevent="toggle()">
           <i class="fas fa-book"></i>
           <span>Livros</span><i class="fas fa-caret-down"></i>
         </a>
@@ -104,18 +111,6 @@ export default {
       }
     },
     toggle(){
-      this.opAutor = !this.opAutor;
-    },
-    toggle2(){
-      this.opEditora = !this.opEditora;
-    },
-    toggle3(){
-      this.opAssunto = !this.opAssunto;
-    },
-    toggle4(){
-      this.opDescricao = !this.opDescricao;
-    },
-    toggle5(){
       this.opLivros = !this.opLivros;
     },
   }

@@ -1,17 +1,6 @@
 import axios from 'axios';
 import {apiConfig} from '../../config/config'
 
-
-axios.interceptors.request.use(function(config) {
-    const token = localStorage.getItem('token');
-    if(token) {
-        config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-}, function(err) {
-    return Promise.reject(err);
-});
-
 const state = {
   logged: false,
   token: ''

@@ -8,6 +8,7 @@ import Editoras from '@/components/pages/Editoras/Editoras';
 import Assuntos from '@/components/pages/Assuntos/Assuntos';
 import Categorias from '@/components/pages/Categorias/Categorias';
 import Livros from '@/components/pages/Livros/Livros';
+import Usuarios from '@/components/pages/Usuarios/Usuarios';
 import Login from '@/components/pages/Login/Login';
 import Forgot from '@/components/pages/Forgot/Forgot';
 
@@ -89,7 +90,12 @@ export default new Router({
                     path: '/livros/cadastro',
                     name: 'CadastroLivro',
                     component: CadastroLivro
-                }
+                },
+                {
+                    path: '/usuarios',
+                    name: 'Usuarios',
+                    component: Usuarios
+                },
             ]
         },
         {
