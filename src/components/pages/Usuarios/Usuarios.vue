@@ -1,27 +1,32 @@
 <template>
   <Painel titulo="Usuários" col="12" text="white" header="primary">
-    <div class="row container mb-4">
-      <input
-        type="text"
-        class="form-control col-md-6 mr-2"
-        placeholder="Pesquise o nome do usuário..."
-      >
-      
-      <button class="btn btn-primary mr-2 botao" type="button">
-        <i class="fas fa-search-plus mr-1"></i>Consultar
-      </button>
-      <button class="btn btn-primary botao" type="button" data-toggle="modal" data-target="#modalEditora">
-        <i class="fas fa-plus-circle mr-1"></i>Cadastrar
-      </button>
+    <Loading :loader="loader"></Loading>
+    <div v-if="!loader">
+      <div class="row container mb-4">
+        <input
+          type="text"
+          class="form-control col-md-6 mr-2"
+          placeholder="Pesquise o nome do usuário..."
+        >
+        
+        <button class="btn btn-primary mr-2 botao" type="button">
+          <i class="fas fa-search-plus mr-1"></i>Consultar
+        </button>
+        <button class="btn btn-primary botao" type="button" data-toggle="modal" data-target="#modalEditora">
+          <i class="fas fa-plus-circle mr-1"></i>Cadastrar
+        </button>
+      </div>
+
+      <TabelaUsuarios :users="users.rows"></TabelaUsuarios>
+      <Paginator :qtdPag="users.totalPage+1" @go-page="goPage" :pagAtiva="pagAtiva" @next="next" @previous="previous"></Paginator>
     </div>
-
-    <TabelaUsuarios :users="users.rows"></TabelaUsuarios>
-    <Paginator :qtdPag="users.totalPage+1" @go-page="goPage" :pagAtiva="pagAtiva" @next="next" @previous="previous"></Paginator>
-
     <Modal titulo="Cadastro Usuário" idModal="modalEditora">
       <FormEditora></FormEditora>
     </Modal>
   </Painel>
+
+  
+  
   
 </template>
 
@@ -31,6 +36,7 @@ import Modal from "../../shared/Modal/Modal";
 import FormEditora from "../../shared/FormEditora/FormEditora";
 import TabelaUsuarios from "../../shared/TabelaUsuarios/TabelaUsuarios";
 import Paginator from "../../shared/Paginator/Paginator";
+import Loading from "../../shared/Loading/Loading"
 import {mapGetters} from 'vuex';
 export default {
   name: "Usuarios",
@@ -39,30 +45,42 @@ export default {
     Modal,
     FormEditora,
     TabelaUsuarios,
-    Paginator
+    Paginator,
+    Loading
   },
   data() {
     return {
-      pagAtiva: 0
+      pagAtiva: 0,
+      loader: false
     }
-  },
-  mounted(){
-      this.$store.dispatch('GETALL', 0);
   },
   computed: mapGetters([
       'users'
   ]),
+  created(){
+      this.getAll();
+  },
   methods: {
+    async getAll(pag = 0){
+      try{
+        this.loader = true;
+        await this.$store.dispatch('GETALL', pag);
+      }catch(err){
+        alert('erro ao carregar dados!')
+      }finally{
+        this.loader = false;
+      }
+    },
     goPage(index){
-      this.$store.dispatch('GETALL', index);
+      this.getAll(index);
       this.pagAtiva = index;
     },
     next(){
-      this.$store.dispatch('GETALL', this.pagAtiva+1);
+      this.getAll(this.pagAtiva+1);
       this.pagAtiva = this.pagAtiva+1;
     },
     previous(){
-      this.$store.dispatch('GETALL', this.pagAtiva-1);
+      this.getAll(this.pagAtiva-1);
       this.pagAtiva = this.pagAtiva-1;
     }
   }

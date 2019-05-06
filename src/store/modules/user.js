@@ -2,7 +2,7 @@ import axios from 'axios';
 import {apiConfig} from '../../config/config'
 
 const state = {
-  users: []
+  users: {}
 }
 
 const mutations = {

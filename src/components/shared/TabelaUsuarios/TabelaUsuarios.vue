@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="user of users" :key="user.id">
+            <tr v-for="user of users" :key="user.idUsuario">
                 <td>{{user.idUsuario}}</td>
                 <td>{{user.nomeUsuario}}</td>
                 <td>{{user.loginUsuario}}</td>
