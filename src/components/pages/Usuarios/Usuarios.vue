@@ -61,10 +61,11 @@ export default {
       this.getAll();
   },
   methods: {
-    async getAll(pag = 0){
+    async getAll(pag = 0, nome = ''){
+      console.log(nome)
       try{
         this.loader = true;
-        await this.$store.dispatch('GETALL', pag);
+        await this.$store.dispatch('GETALL', pag, nome);
       }catch(err){
         alert('erro ao carregar dados!')
       }finally{
