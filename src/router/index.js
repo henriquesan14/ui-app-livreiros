@@ -97,7 +97,7 @@ export default new Router({
         },
         {
             path: '/**',
-            name: 'Login',
+            name: 'Default',
             component: Login,
             beforeEnter: function(to, from, next){
                 if(isLogged()){

@@ -14,16 +14,16 @@
         <button @click="searchUser()" class="btn btn-primary mr-2 botao" type="button">
           <i class="fas fa-search-plus mr-1"></i>Consultar
         </button>
-        <button class="btn btn-primary botao" type="button" data-toggle="modal" data-target="#modalEditora">
+        <button class="btn btn-primary botao" type="button" data-toggle="modal" data-target="#modalUsuario">
           <i class="fas fa-plus-circle mr-1"></i>Cadastrar
         </button>
       </div>
 
       <TabelaUsuarios :users="users.rows"></TabelaUsuarios>
-      <Paginator :qtdPag="users.totalPage+1" @go-page="goPage" :pagAtiva="pagAtiva" @next="next" @previous="previous"></Paginator>
+      <Paginator :users="users" @go-page="goPage"  @next="next" @previous="previous"></Paginator>
     </div>
-    <Modal titulo="Cadastro Usuário" idModal="modalEditora">
-      <FormEditora></FormEditora>
+    <Modal titulo="Cadastro Usuário" idModal="modalUsuario" :large="true">
+      <FormUsuario></FormUsuario>
     </Modal>
   </Painel>
 
@@ -35,7 +35,7 @@
 <script>
 import Painel from "../../shared/Painel/Painel";
 import Modal from "../../shared/Modal/Modal";
-import FormEditora from "../../shared/FormEditora/FormEditora";
+import FormUsuario from "../../shared/FormUsuario/FormUsuario";
 import TabelaUsuarios from "../../shared/TabelaUsuarios/TabelaUsuarios";
 import Paginator from "../../shared/Paginator/Paginator";
 import Loading from "../../shared/Loading/Loading"
@@ -45,7 +45,7 @@ export default {
   components: {
     Painel,
     Modal,
-    FormEditora,
+    FormUsuario,
     TabelaUsuarios,
     Paginator,
     Loading
@@ -79,15 +79,15 @@ export default {
       this.getAll(this.nome);
     },
     goPage(index){
-      this.getAll(index);
+      this.getAll(this.nome, index);
       this.pagAtiva = index;
     },
     next(){
-      this.getAll(this.pagAtiva+1);
+      this.getAll(this.nome, this.pagAtiva+1);
       this.pagAtiva = this.pagAtiva+1;
     },
     previous(){
-      this.getAll(this.pagAtiva-1);
+      this.getAll(this.nome, this.pagAtiva-1);
       this.pagAtiva = this.pagAtiva-1;
     }
   }
