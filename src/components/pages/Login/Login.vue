@@ -95,7 +95,7 @@ export default {
         () => {this.$router.push('/dashboard')}    
       )
       .catch(
-        () => {
+        (err) => {
           this.error = 'Usuario/Senha inválidos!'
         }
       )

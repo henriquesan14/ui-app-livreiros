@@ -4,12 +4,14 @@
     <div v-if="!loader">
       <div class="row container mb-4">
         <input
+        v-model="nome"
+        @keydown.enter="searchUser()"
           type="text"
           class="form-control col-md-6 mr-2"
           placeholder="Pesquise o nome do usuário..."
         >
         
-        <button class="btn btn-primary mr-2 botao" type="button">
+        <button @click="searchUser()" class="btn btn-primary mr-2 botao" type="button">
           <i class="fas fa-search-plus mr-1"></i>Consultar
         </button>
         <button class="btn btn-primary botao" type="button" data-toggle="modal" data-target="#modalEditora">
@@ -51,6 +53,7 @@ export default {
   data() {
     return {
       pagAtiva: 0,
+      nome: '',
       loader: false
     }
   },
@@ -61,16 +64,19 @@ export default {
       this.getAll();
   },
   methods: {
-    async getAll(pag = 0, nome = ''){
-      console.log(nome)
+    async getAll(nome ='',page=0){
+      this.loader = true;
       try{
-        this.loader = true;
-        await this.$store.dispatch('GETALL', pag, nome);
+        await this.$store.dispatch('GETALL', {nome, page});
       }catch(err){
-        alert('erro ao carregar dados!')
+        console.log(err)
       }finally{
         this.loader = false;
-      }
+      }      
+
+    },
+    searchUser(){
+      this.getAll(this.nome);
     },
     goPage(index){
       this.getAll(index);

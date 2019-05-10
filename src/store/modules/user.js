@@ -12,8 +12,8 @@ const mutations = {
 }
 
 const actions = {
-  async GETALL ({commit}, page, nome) {
-    const url = `${apiConfig.baseUrl}/usuarios?pagina=${page}&nome=${nome}`;
+  async GETALL ({commit}, params) {
+    const url = `${apiConfig.baseUrl}/usuarios?nome=${params.nome}&pagina=${params.page}`;
     const { data } = await axios.get(url);
     commit('RECEIVE_USERS',{ users: data});
   }
