@@ -23,7 +23,7 @@
       <Paginator :users="users" @go-page="goPage"  @next="next" @previous="previous"></Paginator>
     </div>
     <Modal titulo="Cadastro Usuário" idModal="modalUsuario" :large="true">
-      <FormUsuario></FormUsuario>
+      <FormUsuario :user="user"></FormUsuario>
     </Modal>
   </Painel>
 
@@ -54,7 +54,10 @@ export default {
     return {
       pagAtiva: 0,
       nome: '',
-      loader: false
+      loader: false,
+      user: {
+
+      }
     }
   },
   computed: mapGetters([

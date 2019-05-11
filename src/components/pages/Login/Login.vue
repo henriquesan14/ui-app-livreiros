@@ -96,7 +96,11 @@ export default {
       )
       .catch(
         (err) => {
-          this.error = 'Usuario/Senha inválidos!'
+          if(err.response){
+            this.error = err.response.data.message;
+          }else{
+            this.error = 'Não disponivel, tente novamente mais tarde!'
+          }
         }
       )
       .finally( () => {
